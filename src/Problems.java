@@ -24,4 +24,23 @@ public final class Problems {
 //2.     გვაქვს 1,5,10,20 და 50 თეთრიანი მონეტები. დაწერეთ ფუნქცია, რომელსაც გადაეცემა თანხა (თეთრებში)
 // და აბრუნებს მონეტების მინიმალურ რაოდენობას, რომლითაც შეგვიძლია ეს თანხა დავახურდაოთ.
 
+    public static int coinCounter(int coins)  {
+        int fiftyRemainder = coins % 50;
+        int counter = coins / 50;
+
+        int twentyRemainder = fiftyRemainder % 20;
+        counter += fiftyRemainder / 20;
+
+        int tenRemainder = twentyRemainder % 10;
+        counter += twentyRemainder / 10;
+
+        int fiveRemainder = tenRemainder % 5;
+        counter += tenRemainder / 5;
+
+        int oneRemainder = fiveRemainder % 1;
+        counter += fiveRemainder / 1;
+
+        return counter;
+
+    }
 }
